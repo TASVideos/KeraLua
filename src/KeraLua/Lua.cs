@@ -133,6 +133,20 @@ namespace KeraLua
 			return NativeMethods.LuaGetTop (luaState);
 		}
 
+		public static IntPtr LuaNewThread (IntPtr luaState)
+		{
+			return NativeMethods.LuaNewThread(luaState);
+		}
+
+		public static int LuaResume (IntPtr luaState, int narg)
+		{
+			return NativeMethods.LuaResume(luaState, IntPtr.Zero, narg);
+		}
+
+		public static int LuaYield (IntPtr luaState, int nresult)
+		{
+			return NativeMethods.LuaYieldk(luaState, nresult, 0, IntPtr.Zero);
+		}
 
 		public static int LuaType (IntPtr luaState, int index)
 		{
